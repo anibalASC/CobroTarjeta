@@ -1,0 +1,28 @@
+order =  conekta.Order.create({
+    "line_items": [{
+        "name": " Pago Tarjeta",
+        "unit_price": 1000,
+        "quantity": 1
+    }],
+    "shipping_lines": [{
+        "amount": 1500
+        }]
+        "currency": "MXN",
+        "customer_info": {
+            "customer_id": "cus_5ba27fb1b795b0137d86b7ec"
+        },
+        "shipping_contact":{
+            "address":{
+                "stree1": "Calle 123, int 2",
+                "postal_code": "84652",
+                "country": "MX"
+            }
+        },
+ 
+}, function(err, res) {
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log(res.toObject());
+});
