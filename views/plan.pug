@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  h1 Planes
+  form(method="post" action="/plans/create")
+    div
+      p
+        label(for="idPlan") Identificador del plan
+        input(type="text" name="idPlan" id="idPlan")
+      p
+        label(for="name") Nombre del plan
+        input(type="text" name="name" id="name")
+        input(type="hidden" name="livemode" id="livemode" value="false")
+        input(type="hidden" name="object" id="object" value="plan")
+      p
+        label(for="amount") Costo del plan
+        input(type="text" name="amount" id="amount")
+      p
+        label(for="currency") Moneda
+        input(type="text" name="currency" id="currency")
+      p
+        label(for="interval") Intervalo de cobro
+        select(name="currency" id="currency")
+          option(value="week") Semanal
+          option(value="half_month") Quincenal
+          option(value="month") Mensual
+          option(value="year") Anual
+      p
+        label(for="frequency") Frecuencia: 
+        br
+        span La frecuencia con cual se genera el cargo al cliente, Por ejemplo, para crear un cargo a tu cliente cada 2 meses, establece el intervalo mensual y la frecuencia en 2
+        br
+        input(type="number" name="frequency" id="frequency")
+      p
+        label(for="trial") Periodo de prueba en dias
+        input(type="number" name="trial" id="trial")
+      p
+        label(for="expiry") Expiracion
+        input(type="text" name="expiry" id="expiry")
+      button Crear Plan

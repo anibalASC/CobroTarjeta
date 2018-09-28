@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h1 conekta
+  form(id='card-form' method="post" action="/clients/create")
+    div
+      label
+        span Nombre del cliente
+        input(type="text" name="name" id="name")
+    div
+      label
+        span Email
+        input(type="email" name="email" id="email")
+    div
+      label
+        span Telefono
+        input(type="tel" name="phone" id="phone")
+    span(class="card-errors")
+    div
+      label
+        span Nombre del tarjetahabiente
+        input(type="text", data-conekta="card[name]")
+    div
+      label
+        span Numero de tarjeta de credito
+        input(type="text", data-conekta="card[number]")
+    div
+      label
+        span CVC
+        input(type="text", data-conekta="card[cvc]")
+    div
+      label
+        span Fecha de expiracion (MM/AAAA)
+        input(data-conekta="card[exp_month]", type="text")
+        input(type="text", data-conekta="card[exp_year]")
+    button(type="submit") Enviar
